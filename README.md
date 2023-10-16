@@ -1,7 +1,7 @@
 # Double-Edged-Defense
 This repository includes all supplementary material (Datasets and codes) of our paper titled "Double-Edged Defense: Thwarting Cyber Attacks and Adversarial Machine Learning in IEC61850-104 Smart Grids"
 
-## Dataset
+## Dataset Structure
 It contains the IDS dataset designed for analyzing and identifying various types of attacks on Smart Grid (SG) systems, IEC 104. The dataset consists of multiple folders, each with specific data related to different attack vectors and scenarios.
 Folder Structure
 The dataset is organized into several folders, each containing different types of data. Below is a description of each folder:
@@ -43,8 +43,11 @@ Report-block Attack: Disrupts the flow of critical information.
 Replay Attack: Deceives the system into making incorrect decisions.
 Features in IEC 104 Header
 The dataset also contains features extracted from the IEC 104 header, such as Timestamp, Relative time, Source and Destination IP addresses, Source and Destination port, etc. For more details, refer to Table: IEC 104 Dataset Features.
+## Dataset Preprocessing & Labeling
+1- IEC Data Preprocessing & Labeling
 
-## Code 
+
+## Adversarial Training for Robust Model
 1- LTSM.ipynb
 
 In this Code file, We experimented the use of LTSM on the preprocessed dataset. The results were very bad, Hence we didn't use it in our methodology. 
