@@ -3,7 +3,7 @@ This repository includes all supplementary material (Datasets and codes) of our 
 
 ## Dataset Structure
 It contains the IDS dataset designed for analyzing and identifying various types of attacks on Smart Grid (SG) systems, IEC 104. The dataset consists of multiple folders, each with specific data related to different attack vectors and scenarios.
-Folder Structure
+
 The dataset is organized into several folders, each containing different types of data. Below is a description of each folder:
 
 ### but-iec104-i: 
@@ -42,7 +42,7 @@ Scanning attack
 Interruption attack
 
 Types of Attacks
-The dataset encompasses 11 distinct types of attacks:
+The IEC 104 data encompasses 11 distinct types of attacks:
 
 DoS Attack (Denial of Service): Leads to potential power outages and reduced system reliability.
 Injection Attack: Risks unauthorized control over SG components.
@@ -65,8 +65,8 @@ In this Code file, we load all the data, preprocess, and label it. After that we
 
     - Data Labeling  
     
-        * 0: Benign Data
-        * 1: Connection-Loss Attack
+        0: Benign Data
+        1: Connection-Loss Attack
         2: DoS Attack
         3: Switching Attack
         4: Scanning Attack
@@ -82,13 +82,13 @@ In this Code file, we load all the data, preprocess, and label it. After that we
         IP address
         Time Stamps
         
-    - Catogerical values encoding: each unique value is encoded to a corrosponding intger value
+    - Categorical values encoding: each unique value is encoded to a corresponding integer value
         APDU format type
         u-format type
         information object address 
         
     - Clear the dataset from Null values
-        All null values were replace with the corrosponding median of the feature
+        All null values were replaced with the corresponding median of the feature
 
 ### The preprocessing of the IEC MMS data includes the following tasks:
 
@@ -110,23 +110,23 @@ In this Code file, we load all the data, preprocess, and label it. After that we
     IP address
     Time Stamps
 
-- Catogerical values encoding: each unique value is encoded to a corrosponding intger value
+- Categorical values encoding: each unique value is encoded to a corresponding integer value
     Domain Id
     Item Id
 
 - Clear the dataset from Null values
-    All null values were replace with the corrosponding median of the feature
+    All null values were replaced with the corresponding median of the feature
     
 
 ## Adversarial Training for Robust Model
 ### 1- LTSM.ipynb
 
-In this Code file, We experimented the use of LTSM on the preprocessed dataset. The results were very bad, Hence we didn't use it in our methodology. 
+In this Code file, We experimented with the use of LTSM on the preprocessed dataset. The results were very bad, Hence we didn't use it in our methodology. 
 
 
 ### 2- MLP-IEC_without_IOA
 
-In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
+In this code file, we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
 The Steps performed in this code include: 
 - Data Loading
 - Data Sampling (30,000 Samples per Class, Total: 6 Classes) 
@@ -134,11 +134,11 @@ The Steps performed in this code include:
 - Model Training 
 - Model Testing 
 
-Result: Model was able to achieve 98% Accuracy 
+Result: The model was able to achieve 98% Accuracy 
 
 ### 3- MLP-IEC_with_IOA
 
-In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
+In this code file, we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
 The Steps performed in this code include: 
 - Data Loading
 - Data Sampling (2000 Samples per Class, Total: 7 Classes)
@@ -146,24 +146,24 @@ The Steps performed in this code include:
 - Model Training 
 - Model Testing 
 
-Result: Model was able to achieve only 89% Accuracy due to the huge data imbalance between classes 
+Result: The model was able to achieve only 89% Accuracy due to the huge data imbalance between classes 
 
 
 
 ### 4- MLP-IEC104_All_merged_All_data-Binary_adv
 
-In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
-The main goal of this file is to train the binary  model and test/enhace it's robustness againest Adversarial attacks.
+In this code file, we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
+The main goal of this file is to train the binary  model and test/enhance its robustness against Adversarial attacks.
 
 The Steps performed in this code include: 
 - Data Loading
 - Remove the IOA and other irrelevant feature 
-- Unifiy the Label for all attack samples since this is a binary classification 
-- Data Sampling (200,000 Samples per classe , Total: 2 Classes)
+- Unify the Label for all attack samples since this is a binary classification 
+- Data Sampling (200,000 Samples per class , Total: 2 Classes)
 - Min-MAx Normalization  
 - Model Training 
 - Model Testing (100% without Applying any adversarial attack)
-- Save the trianed Model
+- Save the trained Model
 - Generate Adversarial Samples using (FGSM/PGD/ Carlini & Wagner) attacks
 - Examine the impact of each attack on the trained model performance 
 
@@ -171,22 +171,22 @@ Result: The model Achieved 100% accuracy and maintained the same accuracy even w
 
 ### 5- MLP-IEC104_All_merged_All_data_adv
 
-In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
-The main goal of this file is to train the attack model and test/enhace it's robustness againest Adversarial attacks.
+In this code file, we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
+The main goal of this file is to train the attack model and test/enhance its robustness against Adversarial attacks.
 
 The Steps performed in this code include: 
 
 - Data Loading
 - Remove the IOA and other irrelevant feature 
-- Remove all benign Samples to trian the attack model 
-- Data Sampling (10,000 Samples for class 1 & 4 and 5000 Samples for remaining classes , Total: 11 Classes)
+- Remove all benign Samples to train the attack model 
+- Data Sampling (10,000 Samples for class 1 & 4 and 5000 Samples for remaining classes, Total: 11 Classes)
 - Min-MAx Normalization  
 - Model Training 
 - Model Testing (99.9% without Applying any adversarial attack)
-- Save the trianed Model
+- Save the trained Model
 - Generate Adversarial Samples using (FGSM/PGD/ Carlini & Wagner) attacks
 - Examine the impact of each attack on the trained model performance 
-- Perform Defensive Distillation & Adversarial Training to increase model resiliancy againest the attacks
+- Perform Defensive Distillation & Adversarial Training to increase model resiliency againest the attacks
 - Test Model accuracy after distillation 
 
 Result: You Can Refer to Table Defensive Distillation effect on Model Accuracy for the detailed results
