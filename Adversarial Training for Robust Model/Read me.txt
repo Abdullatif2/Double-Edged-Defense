@@ -1,9 +1,9 @@
-LTSM.ipynb
+1- LTSM.ipynb
 
 In this Code file, We experimented the use of LTSM on the preprocessed dataset. The results were very bad, Hence we didn't use it in our methodology. 
 
 
-MLP-IEC_without_IOA
+2- MLP-IEC_without_IOA
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
 The Steps performed in this code include: 
@@ -15,7 +15,7 @@ The Steps performed in this code include:
 
 Result: Model was able to achieve 98% Accuracy 
 
-MLP-IEC_with_IOA
+3- MLP-IEC_with_IOA
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
 The Steps performed in this code include: 
@@ -29,7 +29,7 @@ Result: Model was able to achieve only 89% Accuracy due to the huge data imbalan
 
 
 
-MLP-IEC104_All_merged_All_data-Binary_adv
+4- MLP-IEC104_All_merged_All_data-Binary_adv
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
 The main goal of this file is to train the binary  model and test/enhace it's robustness againest Adversarial attacks.
@@ -48,7 +48,7 @@ The Steps performed in this code include:
 
 Result: The model Achieved 100% accuracy and maintained the same accuracy even when applying attacks like (FGSM/PGD/ Carlini & Wagner)
 
-MLP-IEC104_All_merged_All_data_adv
+5- MLP-IEC104_All_merged_All_data_adv
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
 The main goal of this file is to train the attack model and test/enhace it's robustness againest Adversarial attacks.
