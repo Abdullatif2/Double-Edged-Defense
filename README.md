@@ -44,8 +44,58 @@ Replay Attack: Deceives the system into making incorrect decisions.
 Features in IEC 104 Header
 The dataset also contains features extracted from the IEC 104 header, such as Timestamp, Relative time, Source and Destination IP addresses, Source and Destination port, etc. For more details, refer to Table: IEC 104 Dataset Features.
 ## Dataset Preprocessing & Labeling
-1- IEC Data Preprocessing & Labeling
+1- IEC Data Preprocessing 
+In this Code file, we load all the data, preprocess, and label it. After that we save the Preprocessed/labeled data into 3 CSV files (data_without_ioa.csv & data_with_ioa.csv & data_MMS.csv)
 
+### The preprocessing of the IEC104 data includes the following tasks: 
+
+    - Data Labeling
+        0: Benign Data
+        1: Connection-Loss Attack
+        2: DoS Attack
+        3: Switching Attack
+        4: Scanning Attack 
+        5: Rogue-device Attack 
+        6: Injection Attack 
+        7:MITM attack
+        8:Replay attack
+        9:Report-block attack
+        10:Value-change attack
+        11:Masquerading attack
+        
+    - Convert Strings features to Numerical values 
+        IP address
+        Time Stamps
+        
+    - Catogerical values encoding: each unique value is encoded to a corrosponding intger value
+        APDU format type
+        u-format type
+        information object address 
+        
+    - Clear the dataset from Null values
+        All null values were replace with the corrosponding median of the feature
+
+### The preprocessing of the IEC MMS data includes the following tasks:
+
+- Data Labeling
+    0: Benign Data
+    1: Inside-Substation Attack
+    2:Connection loss attack
+    3:Modification attack
+    4: Scanning Attack 
+    5: Interruption Attack 
+ 
+- Convert Strings features to Numerical values 
+    IP address
+    Time Stamps
+
+- Catogerical values encoding: each unique value is encoded to a corrosponding intger value
+    Domain Id
+    Item Id
+
+- Clear the dataset from Null values
+    All null values were replace with the corrosponding median of the feature
+    
 
 ## Adversarial Training for Robust Model
 1- LTSM.ipynb
