@@ -175,17 +175,18 @@ In this code file we used the generated CSV File from the IEC Data Preprocessing
 The main goal of this file is to train the attack model and test/enhace it's robustness againest Adversarial attacks.
 
 The Steps performed in this code include: 
-1- Data Loading
-2- Remove the IOA and other irrelevant feature 
-3- Remove all benign Samples to trian the attack model 
-2- Data Sampling (10,000 Samples for class 1 & 4 and 5000 Samples for remaining classes , Total: 11 Classes)
-3- Min-MAx Normalization  
-4- Model Training 
-5- Model Testing (99.9% without Applying any adversarial attack)
-6- Save the trianed Model
-7- Generate Adversarial Samples using (FGSM/PGD/ Carlini & Wagner) attacks
-8- Examine the impact of each attack on the trained model performance 
-9- Perform Defensive Distillation & Adversarial Training to increase model resiliancy againest the attacks
-10- Test Model accuracy after distillation 
+
+- Data Loading
+- Remove the IOA and other irrelevant feature 
+- Remove all benign Samples to trian the attack model 
+- Data Sampling (10,000 Samples for class 1 & 4 and 5000 Samples for remaining classes , Total: 11 Classes)
+- Min-MAx Normalization  
+- Model Training 
+- Model Testing (99.9% without Applying any adversarial attack)
+- Save the trianed Model
+- Generate Adversarial Samples using (FGSM/PGD/ Carlini & Wagner) attacks
+- Examine the impact of each attack on the trained model performance 
+- Perform Defensive Distillation & Adversarial Training to increase model resiliancy againest the attacks
+- Test Model accuracy after distillation 
 
 Result: You Can Refer to Table Defensive Distillation effect on Model Accuracy for the detailed results
