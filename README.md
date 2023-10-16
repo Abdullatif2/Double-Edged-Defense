@@ -65,27 +65,16 @@ In this Code file, we load all the data, preprocess, and label it. After that we
 
     - Data Labeling
         0: Benign Data
-        
         1: Connection-Loss Attack
-        
         2: DoS Attack
-        
         3: Switching Attack
-        
-        4: Scanning Attack 
-        
-        5: Rogue-device Attack 
-        
+        4: Scanning Attack
+        5: Rogue-device Attack
         6: Injection Attack 
-        
         7:MITM attack
-        
         8:Replay attack
-        
         9:Report-block attack
-        
         10:Value-change attack
-        
         11:Masquerading attack
         
     - Convert Strings features to Numerical values 
