@@ -6,26 +6,40 @@ It contains the IDS dataset designed for analyzing and identifying various types
 Folder Structure
 The dataset is organized into several folders, each containing different types of data. Below is a description of each folder:
 
-but-iec104-i: Contains 7 CSV files. Six files simulate different attack scenarios while one file contains benign communication data.
-
+### but-iec104-i: 
+Contains 7 CSV files. Six files simulate different attack scenarios while one file contains benign communication data.
 DoS Attack
 Injection Attack
 Connection-Loss Attack
 Switching Attack
 Scanning Attack
 Rogue Device Attack
-but-iec104-ii: Contains benign communication data.
 
-rts-iec104: Houses traces reflecting normal SCADA network communication.
+### but-iec104-ii: 
+Contains benign communication data.
 
-vrt-iec104: Contains data from an IEC virtual testbed, including benign and malicious activities.
+### rts-iec104:
+Houses traces reflecting normal SCADA network communication.
 
+### vrt-iec104: 
+Contains data from an IEC virtual testbed, including benign and malicious activities
 Man-in-the-Middle (MITM) Attack
 Value Change Attack
 Masquerading Attack
 Report-block Attack
 Replay Attack
 For a more detailed description of each folder, refer to Table: Description of IDS Dataset Folders.
+
+### encs-iec104:
+This folder contained 3 CSV files, one reflect normal communication, and 2 attack files.
+### encs-mms:
+This folder contained 2 CSV files that collects data from the IEC-MMS header, one reflect normal communication, and 1 attack file.
+### gics-mms:
+This folder contained 5 CSV files that collects data from the IEC-MMS header:
+Normal data 
+Connection loss attack 
+Scanning attack 
+Interruption attack
 
 Types of Attacks
 The dataset encompasses 11 distinct types of attacks:
@@ -79,12 +93,16 @@ In this Code file, we load all the data, preprocess, and label it. After that we
 
 - Data Labeling
     0: Benign Data
+  
     1: Inside-Substation Attack
+  
     2:Connection loss attack
+  
     3:Modification attack
-    4: Scanning Attack 
+  
+    4: Scanning Attack
+  
     5: Interruption Attack
-
   
 - Convert Strings features to Numerical values 
     IP address
