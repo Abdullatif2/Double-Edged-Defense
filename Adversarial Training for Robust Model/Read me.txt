@@ -1,1 +1,8 @@
+LTSM.ipynb
+
+In this Code file, We experimented the use of LTSM on the preprocessed dataset. The results were very bad, Hence we didn't use it in our methodology. 
+
+MLP-IEC_with_IOA
+
+In this code file we used the generated CSV File from the IEC Data Preprocessing & Labling Code. Specifically, we used 
 
