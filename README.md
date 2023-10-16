@@ -65,8 +65,8 @@ In this Code file, we load all the data, preprocess, and label it. After that we
 
     - Data Labeling  
     
-        0: Benign Data
-        1: Connection-Loss Attack
+        * 0: Benign Data
+        * 1: Connection-Loss Attack
         2: DoS Attack
         3: Switching Attack
         4: Scanning Attack
@@ -119,57 +119,57 @@ In this Code file, we load all the data, preprocess, and label it. After that we
     
 
 ## Adversarial Training for Robust Model
-1- LTSM.ipynb
+### 1- LTSM.ipynb
 
 In this Code file, We experimented the use of LTSM on the preprocessed dataset. The results were very bad, Hence we didn't use it in our methodology. 
 
 
-2- MLP-IEC_without_IOA
+### 2- MLP-IEC_without_IOA
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
 The Steps performed in this code include: 
-1- Data Loading
-2- Data Sampling (30,000 Samples per Class, Total: 6 Classes) 
-3- Min-MAx Normalization  
-4- Model Training 
-5- Model Testing 
+- Data Loading
+- Data Sampling (30,000 Samples per Class, Total: 6 Classes) 
+- Min-MAx Normalization  
+- Model Training 
+- Model Testing 
 
 Result: Model was able to achieve 98% Accuracy 
 
-3- MLP-IEC_with_IOA
+### 3- MLP-IEC_with_IOA
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv". 
 The Steps performed in this code include: 
-1- Data Loading
-2- Data Sampling (2000 Samples per Class, Total: 7 Classes)
-3- Min-MAx Normalization  
-4- Model Training 
-5- Model Testing 
+- Data Loading
+- Data Sampling (2000 Samples per Class, Total: 7 Classes)
+- Min-MAx Normalization  
+- Model Training 
+- Model Testing 
 
 Result: Model was able to achieve only 89% Accuracy due to the huge data imbalance between classes 
 
 
 
-4- MLP-IEC104_All_merged_All_data-Binary_adv
+### 4- MLP-IEC104_All_merged_All_data-Binary_adv
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
 The main goal of this file is to train the binary  model and test/enhace it's robustness againest Adversarial attacks.
 
 The Steps performed in this code include: 
-1- Data Loading
-2- Remove the IOA and other irrelevant feature 
-3- Unifiy the Label for all attack samples since this is a binary classification 
-2- Data Sampling (200,000 Samples per classe , Total: 2 Classes)
-3- Min-MAx Normalization  
-4- Model Training 
-5- Model Testing (100% without Applying any adversarial attack)
-6- Save the trianed Model
-7- Generate Adversarial Samples using (FGSM/PGD/ Carlini & Wagner) attacks
-8- Examine the impact of each attack on the trained model performance 
+- Data Loading
+- Remove the IOA and other irrelevant feature 
+- Unifiy the Label for all attack samples since this is a binary classification 
+- Data Sampling (200,000 Samples per classe , Total: 2 Classes)
+- Min-MAx Normalization  
+- Model Training 
+- Model Testing (100% without Applying any adversarial attack)
+- Save the trianed Model
+- Generate Adversarial Samples using (FGSM/PGD/ Carlini & Wagner) attacks
+- Examine the impact of each attack on the trained model performance 
 
 Result: The model Achieved 100% accuracy and maintained the same accuracy even when applying attacks like (FGSM/PGD/ Carlini & Wagner)
 
-5- MLP-IEC104_All_merged_All_data_adv
+### 5- MLP-IEC104_All_merged_All_data_adv
 
 In this code file we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
 The main goal of this file is to train the attack model and test/enhace it's robustness againest Adversarial attacks.
