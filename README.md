@@ -148,16 +148,32 @@ The Steps performed in this code include:
 
 Result: The model was able to achieve only 89% Accuracy due to the huge data imbalance between classes 
 
-
-
-### 4- MLP-IEC104_All_merged_All_data-Binary_adv
+### 4- MLP-IEC104_All_merged_All_data
 
 In this code file, we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
-The main goal of this file is to train the binary  model and test/enhance its robustness against Adversarial attacks.
+The main goal of this file is to train a multiclass model that can differniate between 11 Classes (The model was trained on both the benign and attack samples togther)
 
 The Steps performed in this code include: 
 - Data Loading
 - Remove the IOA and other irrelevant feature 
+- Merge All data in one Dataframe
+- Data Sampling (2000 Samples per class , Total: 12 Classes)
+- Min-MAx Normalization  
+- Model Training 
+- Model Testing 
+
+Result: The model was able to achieve only 95% Accuracy
+
+
+### 5- MLP-IEC104_All_merged_All_data-Binary_adv (1st Layer of the Hierarchical Model) 
+
+In this code file, we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
+The main goal of this file is to train the binary model and test/enhance its robustness against Adversarial attacks. (The model was trained on both the benign and attack samples togther)
+
+The Steps performed in this code include: 
+- Data Loading
+- Remove the IOA and other irrelevant feature
+- Merge All data in one Dataframe
 - Unify the Label for all attack samples since this is a binary classification 
 - Data Sampling (200,000 Samples per class , Total: 2 Classes)
 - Min-MAx Normalization  
@@ -169,15 +185,16 @@ The Steps performed in this code include:
 
 Result: The model Achieved 100% accuracy and maintained the same accuracy even when applying attacks like (FGSM/PGD/ Carlini & Wagner)
 
-### 5- MLP-IEC104_All_merged_All_data_adv
+### 6- MLP-IEC104_All_merged_All_data_adv (2nd Layer of the Hierarchical Model) 
 
 In this code file, we used the generated CSV File from the IEC Data Preprocessing & Labeling Code. Specifically, we used "data_without_ioa.csv" & "data_with_ioa.csv". 
-The main goal of this file is to train the attack model and test/enhance its robustness against Adversarial attacks.
+The main goal of this file is to train the attack model and test/enhance its robustness against Adversarial attacks. (The model was trained on the attack samples only)
 
 The Steps performed in this code include: 
 
 - Data Loading
-- Remove the IOA and other irrelevant feature 
+- Remove the IOA and other irrelevant feature
+- Merge All data in one Dataframe
 - Remove all benign Samples to train the attack model 
 - Data Sampling (10,000 Samples for class 1 & 4 and 5000 Samples for remaining classes, Total: 11 Classes)
 - Min-MAx Normalization  
